@@ -1,40 +1,258 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Weather Dashboard Yogyakarta</title>
 
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Icons -->
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<title>Weather Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
 
 <body>
 
 <div class="container">
 
-    <div class="card">
+<div class="left">
 
-        <h1>Weather Dashboard</h1>
-        <h2>📍 Yogyakarta</h2>
+<div class="main-card">
 
-        <div class="weather">
+<h1>Weather Dashboard</h1>
 
-            <div class="icon">
-                ☀️
-            </div>
+<h2>📍 Yogyakarta</h2>
 
-            <div class="temp" id="temperature">
-                29°C
-            </div>
+<div class="weather-icon">
 
-            <div class="condition" id="condition">
-                Sunny
-            </div>
+☀️
 
+</div>
+
+<h3 class="temperature">
+
+29°C
+
+</h3>
+
+<p class="condition">
+
+Mostly Sunny
+
+</p>
+
+<p id="datetime">
+
+Loading...
+
+</p>
+
+</div>
+
+<div class="info-grid">
+
+<div class="info-card">
+
+<i class="fa-solid fa-temperature-half"></i>
+
+<h4>Feels Like</h4>
+
+<p>31°C</p>
+
+</div>
+
+<div class="info-card">
+
+<i class="fa-solid fa-droplet"></i>
+
+<h4>Humidity</h4>
+
+<p>75%</p>
+
+</div>
+
+<div class="info-card">
+
+<i class="fa-solid fa-wind"></i>
+
+<h4>Wind</h4>
+
+<p>10 km/h</p>
+
+</div>
+
+<div class="info-card">
+
+<i class="fa-solid fa-sun"></i>
+
+<h4>UV Index</h4>
+
+<p>8</p>
+
+</div>
+
+</div>
+
+</div>
+
+<div class="right">
+
+<div class="forecast-card">
+
+<h2>Today's Forecast</h2>
+
+<div class="hourly">
+
+<div class="hour">
+
+08:00
+
+<span>☀️</span>
+
+26°
+
+</div>
+
+<div class="hour">
+
+11:00
+
+<span>🌤️</span>
+
+29°
+
+</div>
+
+<div class="hour">
+
+14:00
+
+<span>☀️</span>
+
+31°
+
+</div>
+
+<div class="hour">
+
+17:00
+
+<span>🌥️</span>
+
+28°
+
+</div>
+
+<div class="hour">
+
+20:00
+
+<span>🌙</span>
+
+25°
+
+</div>
+
+</div>
+
+</div>
+
+<div class="forecast-card">
+
+<h2>7-Day Forecast</h2>
+
+<table>
+
+<tr>
+
+<td>Monday</td>
+
+<td>☀️</td>
+
+<td>31° / 24°</td>
+
+</tr>
+
+<tr>
+
+<td>Tuesday</td>
+
+<td>🌧️</td>
+
+<td>29° / 23°</td>
+
+</tr>
+
+<tr>
+
+<td>Wednesday</td>
+
+<td>🌤️</td>
+
+<td>30° / 24°</td>
+
+</tr>
+
+<tr>
+
+<td>Thursday</td>
+
+<td>🌦️</td>
+
+<td>28° / 23°</td>
+
+</tr>
+
+<tr>
+
+<td>Friday</td>
+
+<td>☀️</td>
+
+<td>31° / 24°</td>
+
+</tr>
+
+<tr>
+
+<td>Saturday</td>
+
+<td>🌤️</td>
+
+<td>30° / 24°</td>
+
+</tr>
+
+<tr>
+
+<td>Sunday</td>
+
+<td>🌧️</td>
+
+<td>29° / 23°</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
             <div class="date" id="date">
                 Sunday
             </div>
