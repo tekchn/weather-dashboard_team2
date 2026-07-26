@@ -2,66 +2,414 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:"Poppins",sans-serif;
 }
 
 body{
+    min-height:100vh;
 
-    background:linear-gradient(135deg,#4facfe,#00f2fe);
+    background:linear-gradient(
+        135deg,
+        #3b82f6,
+        #60a5fa,
+        #38bdf8
+    );
 
     display:flex;
     justify-content:center;
     align-items:center;
 
-    min-height:100vh;
+    padding:30px;
 }
 
-.card{
+.container{
 
-    width:420px;
+    width:100%;
+    max-width:1300px;
 
-    background:white;
+    display:grid;
 
-    border-radius:25px;
+    grid-template-columns:1.2fr 1fr;
 
-    padding:30px;
+    gap:25px;
+
+}
+
+/* LEFT */
+
+.left{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+/* RIGHT */
+
+.right{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:25px;
+
+}
+
+.main-card{
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    border:1px solid rgba(255,255,255,.25);
+
+    border-radius:30px;
+
+    padding:40px;
 
     text-align:center;
 
-    box-shadow:0 20px 50px rgba(0,0,0,.2);
+    color:white;
+
+    box-shadow:0 20px 45px rgba(0,0,0,.15);
 
 }
 
-h1{
+.main-card h1{
 
-    color:#0f172a;
+    font-size:34px;
 
-    margin-bottom:10px;
+    font-weight:700;
+
 }
 
-h2{
+.main-card h2{
 
-    color:#475569;
+    margin-top:10px;
 
-    margin-bottom:20px;
+    font-weight:400;
+
 }
 
-.icon{
+.weather-icon{
 
-    font-size:90px;
+    font-size:110px;
 
-    margin-bottom:10px;
+    margin:20px 0;
+
+    animation:float 3s ease-in-out infinite;
+
 }
 
-.temp{
+.temperature{
 
-    font-size:60px;
+    font-size:70px;
 
-    font-weight:bold;
+    font-weight:700;
 
-    color:#0284c7;
 }
 
+.condition{
+
+    font-size:22px;
+
+    margin-top:8px;
+
+}
+
+#datetime{
+
+    margin-top:20px;
+
+    opacity:.9;
+
+}
+
+/* INFO GRID */
+
+.info-grid{
+
+    display:grid;
+
+    grid-template-columns:repeat(2,1fr);
+
+    gap:20px;
+
+}
+
+.info-card{
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:25px;
+
+    color:white;
+
+    text-align:center;
+
+    padding:25px;
+
+    transition:.3s;
+
+}
+
+.info-card:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.28);
+
+}
+
+.info-card i{
+
+    font-size:34px;
+
+    margin-bottom:15px;
+
+}
+
+.info-card h4{
+
+    font-size:17px;
+
+    font-weight:500;
+
+}
+
+.info-card p{
+
+    margin-top:10px;
+
+    font-size:22px;
+
+    font-weight:600;
+
+}
+
+/* FORECAST */
+
+.forecast-card{
+
+    background:rgba(255,255,255,.18);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:30px;
+
+    color:white;
+
+    padding:30px;
+
+}
+
+.forecast-card h2{
+
+    margin-bottom:25px;
+
+}
+
+.hourly{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    gap:15px;
+
+}
+
+.hour{
+
+    flex:1;
+
+    background:rgba(255,255,255,.18);
+
+    border-radius:20px;
+
+    padding:18px;
+
+    text-align:center;
+
+    transition:.3s;
+
+    font-weight:500;
+
+}
+
+.hour:hover{
+
+    transform:translateY(-8px);
+
+    background:rgba(255,255,255,.30);
+
+}
+
+.hour span{
+
+    display:block;
+
+    font-size:36px;
+
+    margin:12px 0;
+
+}
+
+/* TABLE */
+
+table{
+
+    width:100%;
+
+    border-collapse:collapse;
+
+}
+
+table tr{
+
+    transition:.3s;
+
+}
+
+table tr:hover{
+
+    background:rgba(255,255,255,.12);
+
+}
+
+table td{
+
+    padding:16px 8px;
+
+    border-bottom:1px solid rgba(255,255,255,.2);
+
+}
+
+/* ANIMATION */
+
+@keyframes float{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* ========================= */
+/* TABLET */
+/* ========================= */
+
+@media(max-width:1000px){
+
+.container{
+
+grid-template-columns:1fr;
+
+}
+
+.right{
+
+order:2;
+
+}
+
+.left{
+
+order:1;
+
+}
+
+}
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media(max-width:650px){
+
+body{
+
+padding:15px;
+
+}
+
+.main-card{
+
+padding:25px;
+
+}
+
+.main-card h1{
+
+font-size:28px;
+
+}
+
+.weather-icon{
+
+font-size:85px;
+
+}
+
+.temperature{
+
+font-size:54px;
+
+}
+
+.info-grid{
+
+grid-template-columns:1fr;
+
+}
+
+.hourly{
+
+overflow-x:auto;
+
+padding-bottom:10px;
+
+}
+
+.hour{
+
+min-width:90px;
+
+}
+
+.forecast-card{
+
+padding:22px;
+
+}
+
+table td{
+
+font-size:14px;
+
+}
+
+}
 .condition{
 
     font-size:22px;
