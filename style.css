@@ -7,6 +7,7 @@
 
 body{
     min-height:100vh;
+    min-height:100svh;
 
     background:linear-gradient(
         135deg,
@@ -81,7 +82,7 @@ body{
 
 .main-card h1{
 
-    font-size:34px;
+    font-size:clamp(24px,7vw,34px);
 
     font-weight:700;
 
@@ -97,7 +98,7 @@ body{
 
 .weather-icon{
 
-    font-size:110px;
+    font-size:clamp(64px,20vw,110px);
 
     margin:20px 0;
 
@@ -107,7 +108,7 @@ body{
 
 .temperature{
 
-    font-size:70px;
+    font-size:clamp(42px,13vw,70px);
 
     font-weight:700;
 
@@ -387,13 +388,29 @@ grid-template-columns:1fr;
 
 overflow-x:auto;
 
+scroll-snap-type:x mandatory;
+
+-webkit-overflow-scrolling:touch;
+
+scrollbar-width:none;
+
 padding-bottom:10px;
+
+}
+
+.hourly::-webkit-scrollbar{
+
+display:none;
 
 }
 
 .hour{
 
-min-width:90px;
+flex:0 0 95px;
+
+min-width:0;
+
+scroll-snap-align:start;
 
 }
 
@@ -410,95 +427,259 @@ font-size:14px;
 }
 
 }
+
+/* ========================= */
+/* SMALL PHONE */
+/* ========================= */
+
+@media(max-width:360px){
+
+body{
+
+padding:12px;
+
+}
+
+.main-card{
+
+padding:18px;
+
+border-radius:24px;
+
+}
+
 .condition{
 
-    font-size:22px;
+font-size:18px;
 
-    margin-top:5px;
-
-    color:#555;
 }
 
-.date{
+#datetime{
 
-    margin-top:8px;
+margin-top:14px;
 
-    color:gray;
+font-size:14px;
+
 }
 
-.details{
+.info-grid{
 
-    display:grid;
+gap:12px;
 
-    grid-template-columns:repeat(2,1fr);
-
-    gap:15px;
-
-    margin-top:30px;
 }
 
-.box{
+.info-card{
 
-    background:#e0f2fe;
+padding:16px;
 
-    padding:15px;
-
-    border-radius:15px;
 }
 
-.box i{
+.info-card i{
 
-    color:#0284c7;
+font-size:26px;
 
-    font-size:25px;
+margin-bottom:8px;
 
-    margin-bottom:10px;
 }
 
-.box h3{
+.info-card h4{
 
-    font-size:16px;
+font-size:14px;
+
 }
 
-.box p{
+.info-card p{
 
-    margin-top:8px;
+font-size:18px;
 
-    font-weight:bold;
 }
 
-.forecast-title{
+.hour{
 
-    margin-top:35px;
+flex:0 0 84px;
 
-    margin-bottom:20px;
+padding:12px;
+
 }
 
-.forecast{
+.hour span{
 
-    display:flex;
+font-size:28px;
 
-    justify-content:space-between;
-
-    gap:10px;
 }
 
-.forecast div{
+.forecast-card{
 
-    flex:1;
+padding:16px;
 
-    background:#f1f5f9;
+border-radius:24px;
 
-    padding:15px;
-
-    border-radius:12px;
-
-    transition:.3s;
 }
 
-.forecast div:hover{
+.forecast-card h2{
 
-    background:#bae6fd;
+font-size:18px;
 
-    transform:translateY(-5px);
+}
+
+table td{
+
+font-size:12px;
+
+padding:12px 6px;
+
+}
+
+}
+
+/* ========================= */
+/* LANDSCAPE PHONE */
+/* ========================= */
+
+@media(max-width:1000px) and (orientation:landscape) and (max-height:500px){
+
+body{
+
+padding:15px;
+
+align-items:flex-start;
+
+}
+
+.container{
+
+grid-template-columns:1fr 1fr;
+
+gap:15px;
+
+}
+
+.left,.right{
+
+gap:15px;
+
+}
+
+.main-card{
+
+padding:20px;
+
+}
+
+.main-card h1{
+
+font-size:20px;
+
+}
+
+.main-card h2{
+
+margin-top:4px;
+
+font-size:15px;
+
+}
+
+.weather-icon{
+
+font-size:55px;
+
+margin:8px 0;
+
+}
+
+.temperature{
+
+font-size:38px;
+
+}
+
+.condition{
+
+font-size:15px;
+
+margin-top:4px;
+
+}
+
+#datetime{
+
+margin-top:10px;
+
+font-size:13px;
+
+}
+
+.info-grid{
+
+grid-template-columns:repeat(2,1fr);
+
+gap:10px;
+
+}
+
+.info-card{
+
+padding:12px;
+
+}
+
+.info-card i{
+
+font-size:20px;
+
+margin-bottom:5px;
+
+}
+
+.info-card h4{
+
+font-size:13px;
+
+}
+
+.info-card p{
+
+font-size:15px;
+
+margin-top:6px;
+
+}
+
+.forecast-card{
+
+padding:15px;
+
+}
+
+.forecast-card h2{
+
+font-size:16px;
+
+margin-bottom:12px;
+
+}
+
+.hour{
+
+padding:10px;
+
+}
+
+.hour span{
+
+font-size:24px;
+
+margin:8px 0;
+
+}
+
+table td{
+
+font-size:12px;
+
+padding:9px 5px;
+
+}
+
 }

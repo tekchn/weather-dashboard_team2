@@ -3,20 +3,66 @@
 // ===============================
 
 // Data cuaca sementara
+
 const weather = {
+
     city: "Yogyakarta",
+
     temperature: 29,
+
     condition: "Mostly Sunny",
+
     feelsLike: 31,
+
     humidity: 75,
+
     wind: 10,
+
     uv: 8
+
 };
 
 // Elemen HTML
-const dateElement = document.getElementById("datetime");
+
+const dateElement = document.getElementById("date");
+
+const timeElement = document.getElementById("time");
+
 const iconElement = document.querySelector(".weather-icon");
+
 const titleElement = document.querySelector(".main-card h1");
+
+const temperatureElement = document.querySelector(".temperature");
+
+const conditionElement = document.querySelector(".condition");
+
+const cityElement = document.querySelector(".main-card h2");
+
+const infoCards = document.querySelectorAll(".info-card p");
+
+// ===============================
+// Update Data Cuaca
+// ===============================
+
+function updateWeatherData(){
+
+    temperatureElement.textContent = `${weather.temperature}°C`;
+
+    conditionElement.textContent = weather.condition;
+
+    cityElement.textContent = `📍 ${weather.city}`;
+
+    infoCards[0].textContent = `${weather.feelsLike}°C`;
+
+    infoCards[1].textContent = `${weather.humidity}%`;
+
+    infoCards[2].textContent = `${weather.wind} km/h`;
+
+    infoCards[3].textContent = weather.uv;
+
+}
+
+updateWeatherData();
 
 // ===============================
 // Update Jam & Tanggal
@@ -39,13 +85,15 @@ function updateDateTime(){
         second:"2-digit"
     });
 
-    dateElement.innerHTML = `${date}<br>${time}`;
+    dateElement.textContent = date;
+
+    timeElement.textContent = time;
 
 }
 
 setInterval(updateDateTime,1000);
-updateDateTime();
 
+updateDateTime();
 
 // ===============================
 // Greeting
@@ -57,29 +105,28 @@ function updateGreeting(){
 
     if(hour>=5 && hour<12){
 
-        titleElement.innerHTML="🌤️ Good Morning";
+        titleElement.textContent="🌤️ Good Morning";
 
     }
     else if(hour>=12 && hour<16){
 
-        titleElement.innerHTML="☀️ Good Afternoon";
+        titleElement.textContent="☀️ Good Afternoon";
 
     }
     else if(hour>=16 && hour<19){
 
-        titleElement.innerHTML="🌇 Good Evening";
+        titleElement.textContent="🌇 Good Evening";
 
     }
     else{
 
-        titleElement.innerHTML="🌙 Good Night";
+        titleElement.textContent="🌙 Good Night";
 
     }
 
 }
 
 updateGreeting();
-
 
 // ===============================
 // Day / Night Icon
@@ -91,19 +138,18 @@ function updateWeatherIcon(){
 
     if(hour>=6 && hour<18){
 
-        iconElement.innerHTML="☀️";
+        iconElement.textContent="☀️";
 
     }
     else{
 
-        iconElement.innerHTML="🌙";
+        iconElement.textContent="🌙";
 
     }
 
 }
 
 updateWeatherIcon();
-
 
 // ===============================
 // Console
